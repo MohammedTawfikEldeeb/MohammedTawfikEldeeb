@@ -53,6 +53,20 @@
 
 ###
 
-<img align="left" height="158" src="https://media.tenor.com/m1Mr-khUDVgAAAAC/anime-hacking.gif"  />
+<div align="center">
+  <img height="200" src="https://media.giphy.com/media/5k5vZwRFZR5aZeniqb/giphy.gif?cid=790b7611441lb1lghqg4la73ivn24lr6ttxp2tafo146jzgl&ep=v1_gifs_search&rid=giphy.gif&ct=g"  />
+</div>
 
+###
 
+<div align="center">
+  <img height="158" src="https://media.tenor.com/m1Mr-khUDVgAAAAC/anime-hacking.gif"  />
+</div>
+
+###
+
+<br clear="both">
+
+<img src="https://raw.githubusercontent.com/MohammedTawfikEldeeb/MohammedTawfikEldeeb/output/snake.svg" alt="Snake animation" />
+
+###
