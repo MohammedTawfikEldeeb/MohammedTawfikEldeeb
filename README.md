@@ -57,8 +57,3 @@
 
 ###
 
-<br clear="both">
-
-<img src="https://raw.githubusercontent.com/MohammedTawfikEldeeb/MohammedTawfikEldeeb/output/snake.svg" alt="Snake animation" />
-
-###
