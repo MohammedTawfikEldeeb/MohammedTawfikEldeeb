@@ -59,9 +59,7 @@
 
 ###
 
-<div align="center">
-  <img height="158" src="https://media.tenor.com/m1Mr-khUDVgAAAAC/anime-hacking.gif"  />
-</div>
+
 
 ###
 
