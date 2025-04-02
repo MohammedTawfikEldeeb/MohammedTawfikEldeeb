@@ -1,4 +1,6 @@
-<h3 align="left">Hi 👋! My name is Mohamed Tawfik and I’m a passionate Data Scientist 🧑‍💻, Data Analyst 📊, Machine Learning Engineer 🤖, and NLP Engineer 📝. I have a strong background in analyzing data, building machine learning models 🔍, and implementing Natural Language Processing techniques 🧠. I'm always eager to learn 📚, solve complex problems 💡, and contribute to impactful projects 🚀.</h3>
+<h3 align="left">Hi 👋! My name is Mohamed Tawfik, a passionate Data Scientist 🧑‍💻, Data Analyst 📊, Machine Learning Engineer 🤖, NLP Engineer 📝, and GenAI Engineer 🎨. I specialize in building intelligent systems—from analyzing data and training ML models 🔍 to designing Generative AI solutions that create text, images, and beyond ✨.  
+
+With expertise in **LLMs (GPT, Llama, Mistral)**, diffusion models, and AI-powered creativity tools, I love turning complex problems into innovative applications 🚀. Always learning 📚, always building 🌟.</h3>
 
 ###
 
