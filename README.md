@@ -1,6 +1,17 @@
-<h3 align="left">Hi 👋! My name is Mohamed Tawfik, a passionate Data Scientist 🧑‍💻, Data Analyst 📊, Machine Learning Engineer 🤖, NLP Engineer 📝, and GenAI Engineer 🎨. I specialize in building intelligent systems—from analyzing data and training ML models 🔍 to designing Generative AI solutions that create text, images, and beyond ✨.  
+### 👋 Hi, I'm Mohamed Tawfik!
 
-With expertise in **LLMs (GPT, Llama, Mistral)**, diffusion models, and AI-powered creativity tools, I love turning complex problems into innovative applications 🚀. Always learning 📚, always building 🌟.</h3>
+**AI Engineer | Data Scientist | ML & NLP Specialist**
+
+I build intelligent systems with a focus on:
+- Retrieval-Augmented Generation (RAG)
+- Recommendation Engines
+- Customer Support AI & Sentiment Analysis
+- Generative AI for Text & Images
+- Deep Learning for Computer Vision
+- LLMs (GPT, Llama, Mistral) & Diffusion Models
+
+🔍 Experienced with data pipelines, MLOps (MLflow, CI/CD, Docker), and building scalable solutions for real-world problems.
+🌍 I love turning complex challenges into innovative, production-ready AI applications.
 
 ###
 
@@ -48,25 +59,13 @@ With expertise in **LLMs (GPT, Llama, Mistral)**, diffusion models, and AI-power
   <a href="+201094064673" target="_blank">
     <img src="https://img.shields.io/static/v1?message=Whatsapp&logo=whatsapp&label=&color=25D366&logoColor=white&labelColor=&style=for-the-badge" height="40" alt="whatsapp logo"  />
   </a>
-  <a href="57  https://mail.google.com/mail/u/?authuser=mohamed.tawfik.eldeeb@gmail.com" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="40" alt="gmail logo"  />
-  </a>
+  <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="40" alt="gmail logo"  />
 </div>
 
 ###
 
 <div align="center">
-  <img height="200" src="https://media.giphy.com/media/5k5vZwRFZR5aZeniqb/giphy.gif?cid=790b7611441lb1lghqg4la73ivn24lr6ttxp2tafo146jzgl&ep=v1_gifs_search&rid=giphy.gif&ct=g"  />
+  <img src="https://raw.githubusercontent.com/MohammedTawfikEldeeb/MohammedTawfikEldeeb/output/snake.svg" alt="Snake animation" />
 </div>
-
-###
-
-
-
-###
-
-<br clear="both">
-
-<img src="https://raw.githubusercontent.com/MohammedTawfikEldeeb/MohammedTawfikEldeeb/output/snake.svg" alt="Snake animation" />
 
 ###
