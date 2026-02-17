@@ -1,6 +1,6 @@
 ### 👋 Hi, I'm Mohamed Tawfik!
 
-**AI Engineer | Generative AI Developer | RAG Systems Specialist**
+**AI Engineer | Generative AI Developer**
 
 I design and build intelligent solutions for:
 - Retrieval-Augmented Generation (RAG) systems
