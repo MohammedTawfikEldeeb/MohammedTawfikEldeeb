@@ -65,7 +65,7 @@ def create_svg(dark=False):
 
     pixels = build_mosaic()
 
-    W, H = 1200, 760
+    W, H = 1200, 720
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">',
         f'<rect width="{W}" height="{H}" fill="{bg}"/>',
@@ -83,10 +83,31 @@ def create_svg(dark=False):
         f'<text x="52" y="186" font-family="Arial,sans-serif" font-size="14" fill="{muted}">Generative AI · Agentic Systems · Retrieval · Backend Engineering</text>',
     ]
 
-    # ---- Mosaic portrait (left column) ----
-    mosaic_x0 = 52
-    mosaic_y0 = 220
+    # ---- Mosaic portrait + skills panel, vertically centered together ----
     mosaic_size = GRID * (CELL + GAP)
+    section_top = 220
+
+    out.append(f'<line x1="0" y1="{section_top-30}" x2="{W}" y2="{section_top-30}" stroke="{border}" stroke-width="1"/>')
+
+    mosaic_x0 = 52
+    panel_x = mosaic_x0 + mosaic_size + 60
+    panel_w = W - panel_x - 52
+
+    sections = [
+        ("AGENTIC AI", ["LangGraph · LangChain · MCP · Tool Calling", "Memory · State · Human Approval"]),
+        ("RETRIEVAL & RAG", ["Dense · BM25 · RRF · Qdrant · PGVector", "Cross-Encoder · Semantic Search · Caching"]),
+        ("SOFTWARE ENGINEERING", ["FastAPI · Flask · Node.js · Express.js", "JavaScript · TypeScript · REST · WebSockets"]),
+        ("PRODUCTION & MLOPS", ["Docker · AWS · SageMaker · GitHub Actions", "MLflow · DVC · ZenML · Observability"]),
+    ]
+
+    # Height of the text block: title line + rule + (per-section: title + N lines + gap)
+    text_h = 40  # "What I Build" title + rule
+    for _, lines in sections:
+        text_h += 24 + len(lines) * 22 + 16
+
+    row_h = max(mosaic_size, text_h)
+    mosaic_y0 = section_top + (row_h - mosaic_size) / 2
+    text_y0 = section_top + (row_h - text_h) / 2
 
     out.append(f'<text x="{mosaic_x0}" y="{mosaic_y0-16}" font-family="monospace" font-size="13" fill="{green}">~/identity/portrait.mosaic</text>')
 
@@ -99,21 +120,10 @@ def create_svg(dark=False):
                 f'rx="{CORNER}" fill="rgb({r},{g},{b})"/>'
             )
 
-    # ---- Skills panel (right column) ----
-    panel_x = mosaic_x0 + mosaic_size + 60
-    panel_w = W - panel_x - 52
+    out.append(f'<text x="{panel_x}" y="{text_y0+18}" font-family="Arial,sans-serif" font-size="22" font-weight="800" fill="{text}">What I Build</text>')
+    out.append(f'<line x1="{panel_x}" y1="{text_y0+34}" x2="{panel_x+panel_w}" y2="{text_y0+34}" stroke="{border}"/>')
 
-    out.append(f'<text x="{panel_x}" y="{mosaic_y0-2}" font-family="Arial,sans-serif" font-size="22" font-weight="800" fill="{text}">What I Build</text>')
-    out.append(f'<line x1="{panel_x}" y1="{mosaic_y0+14}" x2="{panel_x+panel_w}" y2="{mosaic_y0+14}" stroke="{border}"/>')
-
-    sections = [
-        ("AGENTIC AI", ["LangGraph · LangChain · MCP · Tool Calling", "Memory · State · Human Approval"]),
-        ("RETRIEVAL & RAG", ["Dense · BM25 · RRF · Qdrant · PGVector", "Cross-Encoder · Semantic Search · Caching"]),
-        ("SOFTWARE ENGINEERING", ["FastAPI · Flask · Node.js · Express.js", "JavaScript · TypeScript · REST · WebSockets"]),
-        ("PRODUCTION & MLOPS", ["Docker · AWS · SageMaker · GitHub Actions", "MLflow · DVC · ZenML · Observability"]),
-    ]
-
-    sy = mosaic_y0 + 70
+    sy = text_y0 + 70
     for title, lines in sections:
         out.append(f'<text x="{panel_x}" y="{sy}" font-family="Arial,sans-serif" font-size="14" font-weight="800" fill="{blue}" letter-spacing="0.5">{escape(title)}</text>')
         sy += 24
@@ -122,7 +132,7 @@ def create_svg(dark=False):
             sy += 22
         sy += 16
 
-    out.append(f'<text x="{panel_x}" y="{mosaic_y0+mosaic_size-6}" font-family="monospace" font-size="12" fill="{muted}">github.com/{USERNAME}</text>')
+    out.append(f'<text x="{mosaic_x0}" y="{section_top+row_h+34}" font-family="monospace" font-size="12" fill="{muted}">github.com/{USERNAME}</text>')
 
     out.append('</svg>')
     return "\n".join(out)
