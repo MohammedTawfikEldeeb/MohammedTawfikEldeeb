@@ -14,7 +14,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Generate snake animation
+      - name: Generate snake
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: MohammedTawfikEldeeb
@@ -22,11 +22,11 @@ jobs:
             dist/github-contribution-grid-snake.svg?palette=github-light
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      - name: Publish to output branch
+      - name: Publish snake
         uses: crazy-max/ghaction-github-pages@v4
         with:
-          target_branch: output
           build_dir: dist
+          target_branch: output
           keep_history: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
