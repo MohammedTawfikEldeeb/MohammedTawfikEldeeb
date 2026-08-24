@@ -1,56 +1,46 @@
 from pathlib import Path
 import urllib.request
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, ImageFilter, ImageEnhance
 
 USERNAME = "MohammedTawfikEldeeb"
 AVATAR_URL = f"https://github.com/{USERNAME}.png?size=512"
 
-# Terminal characters are taller than they are wide.
-# A wider grid keeps the face proportions correct.
-COLS = 70
-ROWS = 44
-
-# Dense -> light character ramp.
-CHARS = "@#8&o:*. "
+# Mosaic grid resolution — square cells, so no aspect-ratio compensation needed.
+GRID = 46          # 46x46 color cells
+CELL = 9.4          # px size of each cell in the final SVG
+GAP = 1.1           # px gap between cells (creates the "pixel mosaic" look)
+CORNER = 2.2         # rounded corner radius of each cell
 
 
 def get_avatar():
-    data = urllib.request.urlopen(AVATAR_URL, timeout=30).read()
+    req = urllib.request.Request(AVATAR_URL, headers={"User-Agent": "Mozilla/5.0"})
+    data = urllib.request.urlopen(req, timeout=30).read()
     Path("avatar.png").write_bytes(data)
 
 
-def build_ascii():
+def build_mosaic():
     get_avatar()
 
     image = Image.open("avatar.png").convert("RGB")
     image = ImageOps.fit(
         image,
-        (COLS, ROWS),
+        (GRID, GRID),
         method=Image.Resampling.LANCZOS,
         centering=(0.5, 0.5),
     )
 
-    result = []
+    # Slight contrast/saturation boost so the mosaic reads clearly at small size.
+    image = ImageEnhance.Contrast(image).enhance(1.12)
+    image = ImageEnhance.Color(image).enhance(1.15)
 
-    for y in range(ROWS):
+    pixels = []
+    for y in range(GRID):
         row = []
-
-        for x in range(COLS):
+        for x in range(GRID):
             r, g, b = image.getpixel((x, y))
-
-            # Perceived brightness.
-            brightness = 0.2126 * r + 0.7152 * g + 0.0722 * b
-
-            index = min(
-                len(CHARS) - 1,
-                int(brightness / 256 * len(CHARS))
-            )
-
-            row.append((CHARS[index], r, g, b))
-
-        result.append(row)
-
-    return result
+            row.append((r, g, b))
+        pixels.append(row)
+    return pixels
 
 
 def escape(text):
@@ -64,87 +54,80 @@ def escape(text):
 
 
 def create_svg(dark=False):
-    bg = "#0b0f14" if dark else "#ffffff"
-    card = "#111820" if dark else "#f6f8fa"
-    text = "#f0f6fc" if dark else "#24292f"
-    muted = "#8b949e" if dark else "#57606a"
+    bg = "#0d1117" if dark else "#ffffff"
+    card = "#0d1117" if dark else "#ffffff"
+    text = "#f0f6fc" if dark else "#1b1f24"
+    muted = "#8b949e" if dark else "#59636e"
     blue = "#58a6ff" if dark else "#0969da"
     green = "#3fb950" if dark else "#1a7f37"
-    border = "#30363d" if dark else "#d0d7de"
+    border = "#21262d" if dark else "#e6e9ec"
+    accent_bg = "#161b22" if dark else "#f6f8fa"
 
-    face = build_ascii()
+    pixels = build_mosaic()
 
+    W, H = 1200, 760
     out = [
-        f'<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">',
-        f'<rect width="1200" height="760" rx="28" fill="{bg}"/>',
-        f'<rect x="20" y="20" width="1160" height="720" rx="25" fill="none" stroke="{border}" stroke-width="2"/>',
+        f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">',
+        f'<rect width="{W}" height="{H}" fill="{bg}"/>',
 
-        # Terminal bar
-        f'<rect x="48" y="48" width="1104" height="48" rx="13" fill="{card}"/>',
-        '<circle cx="75" cy="72" r="6" fill="#ff5f56"/>',
-        '<circle cx="98" cy="72" r="6" fill="#ffbd2e"/>',
-        '<circle cx="121" cy="72" r="6" fill="#27c93f"/>',
-        f'<text x="150" y="78" font-family="monospace" font-size="14" fill="{muted}">mohamed@ai-engineer:~$ ./profile</text>',
-        f'<text x="950" y="78" font-family="monospace" font-size="13" fill="{green}">AI + SOFTWARE</text>',
+        # top hairline bar — flat, no drop shadows, no skeuomorphic card
+        f'<circle cx="46" cy="40" r="5" fill="#ff5f56"/>',
+        f'<circle cx="66" cy="40" r="5" fill="#ffbd2e"/>',
+        f'<circle cx="86" cy="40" r="5" fill="#27c93f"/>',
+        f'<text x="112" y="45" font-family="monospace" font-size="13" fill="{muted}">mohamed@ai-engineer:~$ ./profile</text>',
+        f'<text x="{W-52}" y="45" text-anchor="end" font-family="monospace" font-size="12" font-weight="700" fill="{green}">AI + SOFTWARE</text>',
+        f'<line x1="0" y1="66" x2="{W}" y2="66" stroke="{border}" stroke-width="1"/>',
 
-        f'<text x="68" y="145" font-family="Arial,sans-serif" font-size="42" font-weight="700" fill="{text}">Mohamed Tawfik</text>',
-        f'<text x="68" y="179" font-family="Arial,sans-serif" font-size="19" fill="{blue}">AI Engineer &amp; Software Engineer</text>',
-        f'<text x="68" y="207" font-family="Arial,sans-serif" font-size="15" fill="{muted}">Generative AI · Agentic Systems · Retrieval · Backend Engineering</text>',
-
-        # Portrait card
-        f'<rect x="55" y="235" width="535" height="455" rx="20" fill="{card}" stroke="{border}"/>',
-        f'<text x="82" y="270" font-family="monospace" font-size="14" fill="{green}">~/identity/ascii_portrait</text>',
+        f'<text x="52" y="128" font-family="Arial,sans-serif" font-size="40" font-weight="800" fill="{text}">Mohamed Tawfik</text>',
+        f'<text x="52" y="160" font-family="Arial,sans-serif" font-size="18" font-weight="600" fill="{blue}">AI Engineer &amp; Software Engineer</text>',
+        f'<text x="52" y="186" font-family="Arial,sans-serif" font-size="14" fill="{muted}">Generative AI · Agentic Systems · Retrieval · Backend Engineering</text>',
     ]
 
-    # The portrait deliberately has more columns than rows.
-    # This compensates for terminal glyph aspect ratio.
-    x0 = 80
-    y0 = 302
-    char_width = 7.05
-    char_height = 8.15
+    # ---- Mosaic portrait (left column) ----
+    mosaic_x0 = 52
+    mosaic_y0 = 220
+    mosaic_size = GRID * (CELL + GAP)
 
-    for y, row in enumerate(face):
-        for x, (char, r, g, b) in enumerate(row):
-            # Slightly lift dark colors so facial details remain visible.
-            rr = min(255, int(r * 0.90 + 12))
-            gg = min(255, int(g * 0.90 + 12))
-            bb = min(255, int(b * 0.90 + 12))
+    out.append(f'<text x="{mosaic_x0}" y="{mosaic_y0-16}" font-family="monospace" font-size="13" fill="{green}">~/identity/portrait.mosaic</text>')
 
+    for y, row in enumerate(pixels):
+        for x, (r, g, b) in enumerate(row):
+            px = mosaic_x0 + x * (CELL + GAP)
+            py = mosaic_y0 + y * (CELL + GAP)
             out.append(
-                f'<text x="{x0 + x * char_width:.2f}" '
-                f'y="{y0 + y * char_height:.2f}" '
-                f'font-family="monospace" font-size="8.4" '
-                f'font-weight="700" '
-                f'fill="rgb({rr},{gg},{bb})">{escape(char)}</text>'
+                f'<rect x="{px:.1f}" y="{py:.1f}" width="{CELL}" height="{CELL}" '
+                f'rx="{CORNER}" fill="rgb({r},{g},{b})"/>'
             )
 
-    # Right panel
-    out.extend([
-        f'<text x="630" y="270" font-family="Arial,sans-serif" font-size="23" font-weight="700" fill="{text}">What I Build</text>',
-        f'<line x1="630" y1="285" x2="1120" y2="285" stroke="{border}"/>',
+    # ---- Skills panel (right column) ----
+    panel_x = mosaic_x0 + mosaic_size + 60
+    panel_w = W - panel_x - 52
 
-        f'<text x="630" y="320" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="{blue}">AGENTIC AI</text>',
-        f'<text x="630" y="344" font-family="Arial,sans-serif" font-size="14" fill="{text}">LangGraph · LangChain · MCP · Tool Calling</text>',
-        f'<text x="630" y="365" font-family="Arial,sans-serif" font-size="14" fill="{text}">Memory · State · Human Approval</text>',
+    out.append(f'<text x="{panel_x}" y="{mosaic_y0-2}" font-family="Arial,sans-serif" font-size="22" font-weight="800" fill="{text}">What I Build</text>')
+    out.append(f'<line x1="{panel_x}" y1="{mosaic_y0+14}" x2="{panel_x+panel_w}" y2="{mosaic_y0+14}" stroke="{border}"/>')
 
-        f'<text x="630" y="405" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="{blue}">RETRIEVAL &amp; RAG</text>',
-        f'<text x="630" y="429" font-family="Arial,sans-serif" font-size="14" fill="{text}">Dense · BM25 · RRF · Qdrant · PGVector</text>',
-        f'<text x="630" y="450" font-family="Arial,sans-serif" font-size="14" fill="{text}">Cross-Encoder · Semantic Search · Caching</text>',
+    sections = [
+        ("AGENTIC AI", ["LangGraph · LangChain · MCP · Tool Calling", "Memory · State · Human Approval"]),
+        ("RETRIEVAL & RAG", ["Dense · BM25 · RRF · Qdrant · PGVector", "Cross-Encoder · Semantic Search · Caching"]),
+        ("SOFTWARE ENGINEERING", ["FastAPI · Flask · Node.js · Express.js", "JavaScript · TypeScript · REST · WebSockets"]),
+        ("PRODUCTION & MLOPS", ["Docker · AWS · SageMaker · GitHub Actions", "MLflow · DVC · ZenML · Observability"]),
+    ]
 
-        f'<text x="630" y="490" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="{blue}">SOFTWARE ENGINEERING</text>',
-        f'<text x="630" y="514" font-family="Arial,sans-serif" font-size="14" fill="{text}">FastAPI · Flask · Node.js · Express.js</text>',
-        f'<text x="630" y="535" font-family="Arial,sans-serif" font-size="14" fill="{text}">JavaScript · TypeScript · REST · WebSockets</text>',
+    sy = mosaic_y0 + 70
+    for title, lines in sections:
+        out.append(f'<text x="{panel_x}" y="{sy}" font-family="Arial,sans-serif" font-size="14" font-weight="800" fill="{blue}" letter-spacing="0.5">{escape(title)}</text>')
+        sy += 24
+        for line in lines:
+            out.append(f'<text x="{panel_x}" y="{sy}" font-family="Arial,sans-serif" font-size="14" fill="{text}">{escape(line)}</text>')
+            sy += 22
+        sy += 16
 
-        f'<text x="630" y="575" font-family="Arial,sans-serif" font-size="15" font-weight="700" fill="{blue}">PRODUCTION &amp; MLOPS</text>',
-        f'<text x="630" y="599" font-family="Arial,sans-serif" font-size="14" fill="{text}">Docker · AWS · SageMaker · GitHub Actions</text>',
-        f'<text x="630" y="620" font-family="Arial,sans-serif" font-size="14" fill="{text}">MLflow · DVC · ZenML · Observability</text>',
+    out.append(f'<text x="{panel_x}" y="{mosaic_y0+mosaic_size-6}" font-family="monospace" font-size="12" fill="{muted}">github.com/{USERNAME}</text>')
 
-        f'<text x="630" y="660" font-family="monospace" font-size="13" fill="{muted}">github.com/{USERNAME}</text>',
-        '</svg>'
-    ])
-
+    out.append('</svg>')
     return "\n".join(out)
 
 
-Path("light_mode.svg").write_text(create_svg(False), encoding="utf-8")
-Path("dark_mode.svg").write_text(create_svg(True), encoding="utf-8")
+if __name__ == "__main__":
+    Path("light_mode.svg").write_text(create_svg(False), encoding="utf-8")
+    Path("dark_mode.svg").write_text(create_svg(True), encoding="utf-8")
