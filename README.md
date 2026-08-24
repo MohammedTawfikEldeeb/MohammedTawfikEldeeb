@@ -8,17 +8,6 @@
 
 <br>
 
-<a href="https://www.linkedin.com/in/mohamed-tawfik-aaa4562a3/">
-  <img src="https://skillicons.dev/icons?i=linkedin" width="42" />
-</a>
-&nbsp;&nbsp;
-<a href="mailto:mohamed.tawfik.eldeeb@gmail.com">
-  <img src="https://skillicons.dev/icons?i=gmail" width="42" />
-</a>
-
-</div>
-
----
 
 ## About
 
