@@ -11,21 +11,14 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
-      - name: Install Pillow
-        run: pip install Pillow
-
-      - name: Generate ASCII portrait and theme SVGs
-        run: python generate_profile.py
-
-      - name: Commit generated files
+      - run: pip install Pillow
+      - run: python generate_profile.py
+      - name: Commit generated artwork
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
