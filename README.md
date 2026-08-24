@@ -75,18 +75,25 @@ Generative AI · Agentic AI · RAG · Backend Engineering · MLOps
 
 ---
 
+## GitHub Activity
+
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=MohammedTawfikEldeeb&show_icons=true&hide_border=true&rank_icon=github" height="165" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MohammedTawfikEldeeb&layout=compact&hide_border=true" height="165" />
+<picture>
+  <source media="(prefers-color-scheme: dark)"
+          srcset="https://raw.githubusercontent.com/MohammedTawfikEldeeb/MohammedTawfikEldeeb/output/github-contribution-grid-snake-dark.svg">
 
-<br><br>
+  <source media="(prefers-color-scheme: light)"
+          srcset="https://raw.githubusercontent.com/MohammedTawfikEldeeb/MohammedTawfikEldeeb/output/github-contribution-grid-snake.svg">
 
-<img src="https://streak-stats.demolab.com?user=MohammedTawfikEldeeb&hide_border=true" />
+  <img
+    src="https://raw.githubusercontent.com/MohammedTawfikEldeeb/MohammedTawfikEldeeb/output/github-contribution-grid-snake.svg"
+    alt="GitHub contribution snake"
+  />
+
+</picture>
 
 </div>
-
----
 
 <div align="center">
 
