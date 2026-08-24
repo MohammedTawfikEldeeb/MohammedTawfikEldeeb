@@ -45,7 +45,7 @@ I'm an **AI Engineer & Software Engineer** based in Egypt, graduating in Compute
 <td valign="top" width="50%">
 
 **Languages**
-<p><img src="https://skillicons.dev/icons?i=python,js,ts,sql,bash" /></p>
+<p><img src="https://skillicons.dev/icons?i=python,js,ts,bash,git" /></p>
 
 **AI / LLM**
 <p><img src="https://skillicons.dev/icons?i=pytorch,tensorflow" /></p>
@@ -80,12 +80,12 @@ I'm an **AI Engineer & Software Engineer** based in Egypt, graduating in Compute
 ## 📊 GitHub Stats
 
 <div align="center">
-<img src="https://github-readme-stats.vercel.app/api?username=MohammedTawfikEldeeb&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" height="165" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=MohammedTawfikEldeeb&theme=tokyonight&hide_border=true" height="165" />
+<img src="https://github-stats-extended.vercel.app/api?username=MohammedTawfikEldeeb&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" height="165" />
+<img src="https://github-readme-streak-stats-eight.vercel.app/?user=MohammedTawfikEldeeb&theme=tokyonight&hide_border=true&utc_offset=7200" height="165" />
 </div>
 
 <div align="center">
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MohammedTawfikEldeeb&layout=compact&theme=tokyonight&hide_border=true" height="165" />
+<img src="https://github-stats-extended.vercel.app/api/top-langs/?username=MohammedTawfikEldeeb&layout=compact&theme=tokyonight&hide_border=true" height="165" />
 </div>
 
 <br>
