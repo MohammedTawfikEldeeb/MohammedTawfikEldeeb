@@ -40,40 +40,55 @@ I'm an **AI Engineer & Software Engineer** based in Egypt, graduating in Compute
 
 ## 🛠️ Tech Stack
 
-<table>
-<tr>
-<td valign="top" width="50%">
-
 **Languages**
-<p><img src="https://skillicons.dev/icons?i=python,js,ts,bash,git" /></p>
+<p>
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white" />
+<img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=postgresql&logoColor=white" />
+</p>
 
 **AI / LLM**
-<p><img src="https://skillicons.dev/icons?i=pytorch,tensorflow" /></p>
+<p>
+<img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" />
+<img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" />
+<img src="https://img.shields.io/badge/Hugging_Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black" />
+<img src="https://img.shields.io/badge/🤗_Transformers-FFD21E?style=for-the-badge&logoColor=black" />
+<img src="https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white" />
+</p>
 
-`LangChain` `LangGraph` `OpenAI` `Gemini` `Groq` `Hugging Face`
-`Transformers` `MCP` `LlamaIndex` `Llama.cpp` `Unsloth`
-
-</td>
-<td valign="top" width="50%">
+`LangGraph` `OpenAI` `Gemini` `Groq` `MCP` `LlamaIndex` `Llama.cpp` `Unsloth`
 
 **Backend**
-<p><img src="https://skillicons.dev/icons?i=fastapi,flask,nodejs,express" /></p>
+<p>
+<img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+<img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white" />
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+<img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" />
+</p>
 
 `REST APIs` `WebSockets` `SSE` `Pydantic` `SQLAlchemy` `Drizzle ORM`
 
-**Cloud & MLOps**
-<p><img src="https://skillicons.dev/icons?i=docker,kubernetes,aws,githubactions" /></p>
-
-`SageMaker` `MLflow` `DVC` `ZenML` `Prefect` `Opik`
-
-</td>
-</tr>
-</table>
-
 **Databases & Retrieval**
-<p><img src="https://skillicons.dev/icons?i=postgres,mysql,redis,supabase" /></p>
+<p>
+<img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" />
+<img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+<img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white" />
+<img src="https://img.shields.io/badge/Supabase-3FCF8E?style=for-the-badge&logo=supabase&logoColor=white" />
+</p>
 
 `Qdrant` `PGVector` `Pinecone` `FAISS` `ChromaDB` `Neo4j` `BM25` `RRF` `Cross-Encoder` `Semantic Search`
+
+**Cloud & MLOps**
+<p>
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
+<img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white" />
+<img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" />
+</p>
+
+`SageMaker` `MLflow` `DVC` `ZenML` `Prefect` `Opik`
 
 <br>
 
@@ -115,9 +130,9 @@ I'm an **AI Engineer & Software Engineer** based in Egypt, graduating in Compute
 
 ### Let's Connect
 
-<a href="https://www.linkedin.com/in/mohamed-tawfik-aaa4562a3/"><img src="https://skillicons.dev/icons?i=linkedin" width="45" /></a>
+<a href="https://www.linkedin.com/in/mohamed-tawfik-aaa4562a3/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 &nbsp;&nbsp;
-<a href="mailto:mohamed.tawfik.eldeeb@gmail.com"><img src="https://skillicons.dev/icons?i=gmail" width="45" /></a>
+<a href="mailto:mohamed.tawfik.eldeeb@gmail.com"><img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 
 <br><br>
 
