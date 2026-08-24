@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
-<rect width="1200" height="760" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+<rect width="1200" height="720" fill="#ffffff"/>
 <circle cx="46" cy="40" r="5" fill="#ff5f56"/>
 <circle cx="66" cy="40" r="5" fill="#ffbd2e"/>
 <circle cx="86" cy="40" r="5" fill="#27c93f"/>
@@ -9,7 +9,8 @@
 <text x="52" y="128" font-family="Arial,sans-serif" font-size="40" font-weight="800" fill="#1b1f24">Mohamed Tawfik</text>
 <text x="52" y="160" font-family="Arial,sans-serif" font-size="18" font-weight="600" fill="#0969da">AI Engineer &amp; Software Engineer</text>
 <text x="52" y="186" font-family="Arial,sans-serif" font-size="14" fill="#59636e">Generative AI · Agentic Systems · Retrieval · Backend Engineering</text>
-<text x="52" y="204" font-family="monospace" font-size="13" fill="#1a7f37">~/identity/portrait.mosaic</text>
+<line x1="0" y1="190" x2="1200" y2="190" stroke="#e6e9ec" stroke-width="1"/>
+<text x="52" y="204.0" font-family="monospace" font-size="13" fill="#1a7f37">~/identity/portrait.mosaic</text>
 <rect x="52.0" y="220.0" width="9.4" height="9.4" rx="2.2" fill="rgb(148,147,144)"/>
 <rect x="62.5" y="220.0" width="9.4" height="9.4" rx="2.2" fill="rgb(149,148,145)"/>
 <rect x="73.0" y="220.0" width="9.4" height="9.4" rx="2.2" fill="rgb(150,149,147)"/>
@@ -2126,19 +2127,19 @@
 <rect x="503.5" y="692.5" width="9.4" height="9.4" rx="2.2" fill="rgb(201,203,207)"/>
 <rect x="514.0" y="692.5" width="9.4" height="9.4" rx="2.2" fill="rgb(187,191,195)"/>
 <rect x="524.5" y="692.5" width="9.4" height="9.4" rx="2.2" fill="rgb(188,193,198)"/>
-<text x="595.0" y="218" font-family="Arial,sans-serif" font-size="22" font-weight="800" fill="#1b1f24">What I Build</text>
-<line x1="595.0" y1="234" x2="1148.0" y2="234" stroke="#e6e9ec"/>
-<text x="595.0" y="290" font-family="Arial,sans-serif" font-size="14" font-weight="800" fill="#0969da" letter-spacing="0.5">AGENTIC AI</text>
-<text x="595.0" y="314" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">LangGraph · LangChain · MCP · Tool Calling</text>
-<text x="595.0" y="336" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">Memory · State · Human Approval</text>
-<text x="595.0" y="374" font-family="Arial,sans-serif" font-size="14" font-weight="800" fill="#0969da" letter-spacing="0.5">RETRIEVAL &amp; RAG</text>
-<text x="595.0" y="398" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">Dense · BM25 · RRF · Qdrant · PGVector</text>
-<text x="595.0" y="420" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">Cross-Encoder · Semantic Search · Caching</text>
-<text x="595.0" y="458" font-family="Arial,sans-serif" font-size="14" font-weight="800" fill="#0969da" letter-spacing="0.5">SOFTWARE ENGINEERING</text>
-<text x="595.0" y="482" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">FastAPI · Flask · Node.js · Express.js</text>
-<text x="595.0" y="504" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">JavaScript · TypeScript · REST · WebSockets</text>
-<text x="595.0" y="542" font-family="Arial,sans-serif" font-size="14" font-weight="800" fill="#0969da" letter-spacing="0.5">PRODUCTION &amp; MLOPS</text>
-<text x="595.0" y="566" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">Docker · AWS · SageMaker · GitHub Actions</text>
-<text x="595.0" y="588" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">MLflow · DVC · ZenML · Observability</text>
-<text x="595.0" y="697.0" font-family="monospace" font-size="12" fill="#59636e">github.com/MohammedTawfikEldeeb</text>
+<text x="595.0" y="291.5" font-family="Arial,sans-serif" font-size="22" font-weight="800" fill="#1b1f24">What I Build</text>
+<line x1="595.0" y1="307.5" x2="1148.0" y2="307.5" stroke="#e6e9ec"/>
+<text x="595.0" y="343.5" font-family="Arial,sans-serif" font-size="14" font-weight="800" fill="#0969da" letter-spacing="0.5">AGENTIC AI</text>
+<text x="595.0" y="367.5" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">LangGraph · LangChain · MCP · Tool Calling</text>
+<text x="595.0" y="389.5" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">Memory · State · Human Approval</text>
+<text x="595.0" y="427.5" font-family="Arial,sans-serif" font-size="14" font-weight="800" fill="#0969da" letter-spacing="0.5">RETRIEVAL &amp; RAG</text>
+<text x="595.0" y="451.5" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">Dense · BM25 · RRF · Qdrant · PGVector</text>
+<text x="595.0" y="473.5" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">Cross-Encoder · Semantic Search · Caching</text>
+<text x="595.0" y="511.5" font-family="Arial,sans-serif" font-size="14" font-weight="800" fill="#0969da" letter-spacing="0.5">SOFTWARE ENGINEERING</text>
+<text x="595.0" y="535.5" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">FastAPI · Flask · Node.js · Express.js</text>
+<text x="595.0" y="557.5" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">JavaScript · TypeScript · REST · WebSockets</text>
+<text x="595.0" y="595.5" font-family="Arial,sans-serif" font-size="14" font-weight="800" fill="#0969da" letter-spacing="0.5">PRODUCTION &amp; MLOPS</text>
+<text x="595.0" y="619.5" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">Docker · AWS · SageMaker · GitHub Actions</text>
+<text x="595.0" y="641.5" font-family="Arial,sans-serif" font-size="14" fill="#1b1f24">MLflow · DVC · ZenML · Observability</text>
+<text x="52" y="737.0" font-family="monospace" font-size="12" fill="#59636e">github.com/MohammedTawfikEldeeb</text>
 </svg>
