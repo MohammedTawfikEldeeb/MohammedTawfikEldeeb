@@ -65,7 +65,7 @@ def create_svg(dark=False):
 
     pixels = build_mosaic()
 
-    W, H = 1200, 720
+    W, H = 1200, 760
     out = [
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">',
         f'<rect width="{W}" height="{H}" fill="{bg}"/>',
@@ -95,6 +95,7 @@ def create_svg(dark=False):
 
     sections = [
         ("AGENTIC AI", ["LangGraph · LangChain · MCP · Tool Calling", "Memory · State · Human Approval"]),
+        ("ML / DEEP LEARNING", ["Scikit-learn · PyTorch · TensorFlow · Keras", "NLP: Transformers · spaCy   ·   CV: OpenCV · YOLO"]),
         ("RETRIEVAL & RAG", ["Dense · BM25 · RRF · Qdrant · PGVector", "Cross-Encoder · Semantic Search · Caching"]),
         ("SOFTWARE ENGINEERING", ["FastAPI · Flask · Node.js · Express.js", "JavaScript · TypeScript · REST · WebSockets"]),
         ("PRODUCTION & MLOPS", ["Docker · AWS · SageMaker · GitHub Actions", "MLflow · DVC · ZenML · Observability"]),
