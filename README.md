@@ -88,7 +88,7 @@ I'm an **AI Engineer & Software Engineer** based in Egypt, graduating in Compute
 <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" />
 </p>
 
-`SageMaker` `MLflow` `DVC` `ZenML` `Prefect` `Opik`
+`SageMaker` `MLflow` `DVC` `ZenML` `Prefect` `Opik` `Langsmith`
 
 <br>
 
